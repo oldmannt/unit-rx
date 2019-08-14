@@ -1,15 +1,20 @@
 export type Language = 'cn' | 'en';
 
 export interface Unit {
-    value:number;
+    value:number; // value = base.value * ratio + offset
     name:string;
     isMetric:boolean;
+    ratio:number;
+    offset:number;
+    lang:string;
 }
 
 export interface UnitGroup {
-    source:string;
+    base:string;
     summary:string;
-    units:Unit[];
+    units: {
+        [name:string]:Unit;
+    }
 }
 
 export interface Store {

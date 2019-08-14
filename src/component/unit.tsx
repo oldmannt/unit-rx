@@ -5,6 +5,8 @@ import { Store } from '../store';
 
 interface UnitProps {
     inputValue:Store['inputValue'];
+    groups:Store['groups'];
+    name:string;
 }
 
 class Unit extends React.Component<UnitProps, any> {
@@ -14,11 +16,12 @@ class Unit extends React.Component<UnitProps, any> {
     // }
     
     render() {
-        const value = this.props.inputValue===undefined?0:this.props.inputValue;
-        
+        //let value = this.props.inputValue===undefined?0:this.props.inputValue;
+        console.log(`unit value:${this.props.inputValue}`)
+        console.log(`inputValue type:${typeof this.props.inputValue}`)
         return(
             <div className='unit'>
-                <p className='unit-value'>{value.toString()}</p>
+                <p className='unit-value'>{this.props.inputValue.toString()}</p>
                 <p className='unit-name'>m</p>
             </div>
         );
@@ -32,7 +35,7 @@ class Unit extends React.Component<UnitProps, any> {
 //   }
 
 const ConnectedUnit = connect (
-    (state:Store) => ({inputValue: state.inputValue}),
+    (state:Store) => ({...state}),
     null
 )(Unit)
   

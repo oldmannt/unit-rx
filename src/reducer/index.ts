@@ -5,17 +5,17 @@ import { createReducer } from 'redux-starter-kit';
 export const inputChangeReducer = createReducer<Store['inputValue']>(
   1,
   {
-    inputChange(state, action) {
+    inputChange(inputValue, action) {
       return action.value;
     }
   }
 );
 
-export const groupsReducer = createReducer<Store['groups']>(
+export const groupsBaseReducer = createReducer<Store['groups']>(
   {},
   {
-    groupsSource(groups, action) {
-      groups[action.group].source = action.source;
+    setGroupBase(groups, action) {
+      groups[action.group].base = action.base;
     },
 
     // addGroups
@@ -25,5 +25,5 @@ export const groupsReducer = createReducer<Store['groups']>(
 
 export const reducer = combineReducers({
   inputValue: inputChangeReducer,
-  groups: groupsReducer,
+  groups: groupsBaseReducer,
 });

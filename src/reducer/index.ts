@@ -19,7 +19,9 @@ export const groupsBaseReducer = createReducer<Store['groups']>(
     },
 
     // addGroups
-    
+    // addGroup(groups, actionn) {
+    //   groups
+    // }
   }
 );
 

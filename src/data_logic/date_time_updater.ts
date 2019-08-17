@@ -9,7 +9,7 @@ class DateTImeUpdater implements IDateTimeUpdater{
         this.timeZone = zone;
         const now = new Date()
         const interval = (60000 - now.getSeconds()*1000)
-        console.log(`DateTImeUpdater constructor time:${now.toLocaleString()} timeZone:${now.getTimezoneOffset()}`);
+        //console.log(`DateTImeUpdater constructor time:${now.toLocaleString()} timeZone:${now.getTimezoneOffset()}`);
         
         this.timer = setTimeout(() => {
             this.tick()
@@ -28,8 +28,8 @@ class DateTImeUpdater implements IDateTimeUpdater{
     public getLabel():string {
         const tz = this.getTimeZone(new Date());
         let dt = this.getDateByTimeZone(tz);
-        console.log(`DateTImeUpdater getLobel timeZoneName:${Intl.DateTimeFormat().resolvedOptions().timeZone}`);
-        console.log(`DateTImeUpdater ${dt.getTimezoneOffset()}`)
+        //console.log(`DateTImeUpdater getLobel timeZoneName:${Intl.DateTimeFormat().resolvedOptions().timeZone}`);
+        //console.log(`DateTImeUpdater ${dt.getTimezoneOffset()}`)
         return this.getLabelFromDate(dt);
     }
 
@@ -65,7 +65,7 @@ class DateTImeUpdater implements IDateTimeUpdater{
         // if not bj return bj timezone
         // else return sf timezone
         if (date.getTimezoneOffset() !== -480) {
-            console.log(`getTimeZone return 8`)
+            //console.log(`getTimeZone return 8`)
             return 8;
         }
 

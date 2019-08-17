@@ -6,13 +6,13 @@
                 "value":1, "name":"meter",      "isMetric":false, "ratio":1,    "offset":0, "postfix":"unit_post_m"
             },
             "centimeter":{
-                "value":1, "name":"centimeter", "isMetric":false, "ratio":0.1,  "offset":0, "postfix":"unit_post_cm"
+                "value":1, "name":"centimeter", "isMetric":false, "ratio":100,  "offset":0, "postfix":"unit_post_cm"
             },
             "millimeter":{
-                "value":1, "name":"millimeter", "isMetric":false, "ratio":0.01, "offset":0, "postfix":"unit_post_mm"
+                "value":1, "name":"millimeter", "isMetric":false, "ratio":1000, "offset":0, "postfix":"unit_post_mm"
             },
             "kilometer":{
-                "value":1, "name":"kilometer",  "isMetric":false,  "ratio":100, "offset":0, "postfix":"unit_post_km"
+                "value":1, "name":"kilometer",  "isMetric":false,  "ratio":0.001, "offset":0, "postfix":"unit_post_km"
             },
             "feet":{
                 "value":1, "name":"feet",       "isMetric":false, "ratio":3.2808399,  "offset":0, "postfix":"unit_post_ft"

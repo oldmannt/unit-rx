@@ -6,7 +6,7 @@ export interface Unit {
     isMetric:boolean;
     ratio:number;
     offset:number;
-    lang:string;
+    postfix:string;
 }
 
 export interface UnitGroup {
@@ -20,7 +20,7 @@ export interface UnitGroup {
 export interface Store {
     inputValue:number;
     groups: {
-        [id:string]:UnitGroup;
+        [name:string]:UnitGroup;
     };
 
     // languageKeys: {

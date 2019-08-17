@@ -12,12 +12,12 @@ export class DateTimeLabel extends React.Component<any, DateTimeLabelState> {
         this.DateTimeupdater = createDateTimeUpdater(8);
         this.DateTimeupdater.setCallback(this.update.bind(this));
         const label = this.DateTimeupdater.getLabel();
-        console.log(`DateTimeLabel constructor label:${label}`);
+        //console.log(`DateTimeLabel constructor label:${label}`);
         this.state = {timeLabel:label};
     }
 
     update(label:string) {
-        console.log(`update label:${label}`);
+        //console.log(`update label:${label}`);
         this.setState({timeLabel:label});
     }
 

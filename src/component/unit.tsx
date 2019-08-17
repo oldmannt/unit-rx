@@ -6,7 +6,8 @@ import { Store } from '../store';
 interface UnitProps {
     inputValue:Store['inputValue'];
     groups:Store['groups'];
-    name:string;
+    groupName:string;
+    unitName:string;
 }
 
 class Unit extends React.Component<UnitProps, any> {
@@ -18,11 +19,18 @@ class Unit extends React.Component<UnitProps, any> {
     render() {
         //let value = this.props.inputValue===undefined?0:this.props.inputValue;
         console.log(`unit value:${this.props.inputValue}`)
-        console.log(`inputValue type:${typeof this.props.inputValue}`)
+        const group = this.props.groups[this.props.groupName];
+        const unit = group.units[this.props.unitName]
+        let value = this.props.inputValue;
+        const postfix = unit.postfix.substring("unit_post_".length)
+        if (unit.name !== group.base)
+        {
+            value = value * unit.ratio + unit.offset
+        }
         return(
             <div className='unit'>
-                <p className='unit-value'>{this.props.inputValue.toString()}</p>
-                <p className='unit-name'>m</p>
+                <p className='unit-value'>{value.toString()}</p>
+                <p className='unit-name'>{postfix}</p>
             </div>
         );
     }

@@ -11,21 +11,24 @@ export const inputChangeReducer = createReducer<Store['inputValue']>(
   }
 );
 
-export const groupsBaseReducer = createReducer<Store['groups']>(
+export const groupsReducer = createReducer<Store['groups']>(
   {},
   {
     setGroupBase(groups, action) {
       groups[action.group].base = action.base;
     },
 
-    // addGroups
-    // addGroup(groups, actionn) {
-    //   groups
-    // }
+    addGroup(groups, action) {
+      console.log(`groupsReducer add group name:${action.name}`)
+      console.log(action.group)
+      groups[action.name] = action.group;
+      //console.log('groups')
+      //console.log(groups)
+    }
   }
 );
 
 export const reducer = combineReducers({
   inputValue: inputChangeReducer,
-  groups: groupsBaseReducer,
+  groups: groupsReducer,
 });

@@ -1,11 +1,12 @@
 import React from 'react';
+import Divider from 'antd/lib/divider';
 import './unit_group.css'
 import { Unit } from './unit';
 import { connect } from 'react-redux';
 import { Store } from '../store';
 
 interface UnitGroupProps {
-    id:string;
+    name:string;
     groups:Store['groups'];
 }
 
@@ -16,22 +17,22 @@ class UnitGroup extends React.Component<UnitGroupProps, any> {
     // }
     
     render() {
-        const group = this.props.groups[this.props.id]
+        const group = this.props.groups[this.props.name]
         const unitsUS = Object.keys(group.units).filter(name => {return !group.units[name].isMetric})
         const unitsMetrics = Object.keys(group.units).filter(name => {return group.units[name].isMetric})
         return(
             <div>
                 <div style={{display:'table-cell'}}>
-                    {unitsUS.map(name => (
-                        <Unit name={name}/>
+                    {unitsUS.map(unitName => (
+                        <Unit key={unitName} groupName={this.props.name} unitName={unitName}/>
                     ))}
                 </div>
                 <div style={{display:'table-cell'}}>
-                    {unitsMetrics.map(name => (
-                        <Unit name={name}/>
+                    {unitsMetrics.map(unitName => (
+                        <Unit key={unitName} groupName={this.props.name} unitName={unitName}/>
                     ))}
                 </div>
-                
+                <Divider />
             </div>
         );
     }

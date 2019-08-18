@@ -18,7 +18,7 @@ export const groupsReducer = createReducer<Store['groups']>(
       groups[action.group].base = action.base;
     },
 
-    addGroup(groups, action) {
+    setGroup(groups, action) {
       console.log(`groupsReducer add group name:${action.name}`)
       console.log(action.group)
       groups[action.name] = action.group;

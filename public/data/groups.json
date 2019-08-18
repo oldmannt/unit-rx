@@ -1,49 +1,85 @@
 {
-    "length": {
-        "base":"meter",
-        "units": {
-            "meter":{
-                "value":1, "name":"meter",      "isMetric":false, "ratio":1,    "offset":0, "postfix":"unit_post_m"
-            },
-            "centimeter":{
-                "value":1, "name":"centimeter", "isMetric":false, "ratio":100,  "offset":0, "postfix":"unit_post_cm"
-            },
-            "millimeter":{
-                "value":1, "name":"millimeter", "isMetric":false, "ratio":1000, "offset":0, "postfix":"unit_post_mm"
-            },
-            "kilometer":{
-                "value":1, "name":"kilometer",  "isMetric":false,  "ratio":0.001, "offset":0, "postfix":"unit_post_km"
-            },
-            "feet":{
-                "value":1, "name":"feet",       "isMetric":false, "ratio":3.2808399,  "offset":0, "postfix":"unit_post_ft"
-            },
-            "inch":{
-                "value":1, "name":"inch",       "isMetric":false, "ratio":39.3700787, "offset":0, "postfix":"unit_post_inch"
-            },
-            "mile":{
-                "value":1, "name":"mile",       "isMetric":false, "ratio":0.0006214, "offset":0, "postfix":"unit_post_mi"
-            },
-            "yard":{
-                "value":1, "name":"yard",       "isMetric":false, "ratio":1.0936133, "offset":0, "postfix":"unit_post_yard"
+    "version":0.2,
+    "groups":{
+        "length": {
+            "base":"meter",
+            "units": {
+                "meter":{
+                    "value":1, "name":"meter",      "isUS":false, "ratio":1,    "offset":0, "postfix":"unit_post_m"
+                },
+                "centimeter":{
+                    "value":1, "name":"centimeter", "isUS":false, "ratio":100,  "offset":0, "postfix":"unit_post_cm"
+                },
+                "millimeter":{
+                    "value":1, "name":"millimeter", "isUS":false, "ratio":1000, "offset":0, "postfix":"unit_post_mm"
+                },
+                "kilometer":{
+                    "value":1, "name":"kilometer",  "isUS":false,  "ratio":0.001, "offset":0, "postfix":"unit_post_km"
+                },
+                "feet":{
+                    "value":1, "name":"feet",       "isUS":true, "ratio":3.2808399,  "offset":0, "postfix":"unit_post_ft"
+                },
+                "inch":{
+                    "value":1, "name":"inch",       "isUS":true, "ratio":39.3700787, "offset":0, "postfix":"unit_post_inch"
+                },
+                "mile":{
+                    "value":1, "name":"mile",       "isUS":true, "ratio":0.0006214, "offset":0, "postfix":"unit_post_mi"
+                },
+                "yard":{
+                    "value":1, "name":"yard",       "isUS":true, "ratio":1.0936133, "offset":0, "postfix":"unit_post_yard"
+                }
             }
-        }
-    },
-    "mass": {
-        "base":"mass",
-        "units": {
-            "gram":{
-                "value":1, "name":"gram",      "isMetric":false, "ratio":1,        "offset":0, "postfix":"unit_post_g"
-            },
-            "kilogram":{
-                "value":1, "name":"kilogram",  "isMetric":false, "ratio":1000,     "offset":0, "postfix":"unit_post_kg"
-            },
-            "lb":{
-                "value":1, "name":"pound",     "isMetric":true, "ratio":0.0022046, "offset":0, "postfix":"unit_post_lb"
-            },
-            "oz":{
-                "value":1, "name":"ounce",     "isMetric":true, "ratio":0.035274,  "offset":0, "postfix":"unit_post_oz"
+        },
+        "mass": {
+            "base":"gram",
+            "units": {
+                "gram":{
+                    "value":1, "name":"gram",      "isUS":false, "ratio":1,        "offset":0, "postfix":"unit_post_g"
+                },
+                "kilogram":{
+                    "value":1, "name":"kilogram",  "isUS":false, "ratio":1000,     "offset":0, "postfix":"unit_post_kg"
+                },
+                "lb":{
+                    "value":1, "name":"pound",     "isUS":true, "ratio":0.0022046, "offset":0, "postfix":"unit_post_lb"
+                },
+                "oz":{
+                    "value":1, "name":"ounce",     "isUS":true, "ratio":0.035274,  "offset":0, "postfix":"unit_post_oz"
+                }
             }
-        }
+        },
+        "volume" : {
+            "name":"volume", 
+            "base":"liter", 
+            "units":{
+                "litter": {"name":"liter", "isUS":false, "offset":0, "ratio":1.0, "postfix":"unit_post_L"},
+                "mliter": {"name":"mliter", "isUS":false, "offset":0, "ratio":1000, "postfix":"unit_post_ml"},
+                "gal":    {"name":"gal", "isUS":true,"offset":0, "ratio":0.2199692, "postfix":"unit_post_gal"}
+        }},
+        "square":{
+            "name":"square", 
+            "base":"sqmeter", 
+            "units":{
+                "sqmeter": {"name":"sqmeter", "isUS":false, "offset":0, "ratio":1.0, "postfix":"unit_post_m²"},
+                "sqcmeter":{"name":"sqcmeter", "isUS":false, "offset":0, "ratio":10000, "postfix":"unit_post_cm²"},
+                "sqinch":  {"name":"sqinch", "isUS":true, "offset":0, "ratio":1550.0031, "postfix":"unit_post_inch²"},
+                "sqfeet":  {"name":"sqfeet", "isUS":true, "offset":0, "ratio":10.7639104, "postfix":"unit_post_ft²"}
+        }},
+        "termperature":{
+            "name":"termperature", 
+            "base":"celciisUS", 
+            "units":{
+                "celciisUS":   {"name":"celciisUS", "isUS":false,"offset":0, "ratio":1.0, "postfix":"unit_post_°C"},
+                "fahrenheit":{"name":"fahrenheit", "isUS":true, "offset":0, "ratio":1.8, "offset":32, "postfix":"unit_post_°F"}
+        }},
+        "exchange":{
+            "name":"exchange", 
+            "base":"usd", 
+            "units":{
+                "usd":{"name":"usd", "isUS":true,"offset":0, "ratio":6.5971, "postfix":"unit_post_$"},
+                "rmb":{"name":"rmb", "isUS":false,"offset":0, "ratio":1.0, "postfix":"unit_post_¥"},
+                "btc":{"name":"btc", "isUS":false,"offset":0, "ratio":1.0, "postfix":"unit_post_₿"}
+        }}
     }
+    
 }
 

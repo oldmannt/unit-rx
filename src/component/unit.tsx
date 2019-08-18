@@ -18,7 +18,7 @@ class Unit extends React.Component<UnitProps, any> {
     
     render() {
         //let value = this.props.inputValue===undefined?0:this.props.inputValue;
-        console.log(`unit value:${this.props.inputValue}`)
+        //console.log(`unit value:${this.props.inputValue}`)
         const group = this.props.groups[this.props.groupName];
         const unit = group.units[this.props.unitName]
         let value = this.props.inputValue;

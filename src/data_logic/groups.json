@@ -1,0 +1,52 @@
+{
+    "version":0.1,
+    "groups":{
+        "length": {
+            "base":"meter",
+            "units": {
+                "meter":{
+                    "value":1, "name":"meter",      "isMetric":false, "ratio":1,    "offset":0, "postfix":"unit_post_m"
+                },
+                "centimeter":{
+                    "value":1, "name":"centimeter", "isMetric":false, "ratio":100,  "offset":0, "postfix":"unit_post_cm"
+                },
+                "millimeter":{
+                    "value":1, "name":"millimeter", "isMetric":false, "ratio":1000, "offset":0, "postfix":"unit_post_mm"
+                },
+                "kilometer":{
+                    "value":1, "name":"kilometer",  "isMetric":false,  "ratio":0.001, "offset":0, "postfix":"unit_post_km"
+                },
+                "feet":{
+                    "value":1, "name":"feet",       "isMetric":true, "ratio":3.2808399,  "offset":0, "postfix":"unit_post_ft"
+                },
+                "inch":{
+                    "value":1, "name":"inch",       "isMetric":true, "ratio":39.3700787, "offset":0, "postfix":"unit_post_inch"
+                },
+                "mile":{
+                    "value":1, "name":"mile",       "isMetric":true, "ratio":0.0006214, "offset":0, "postfix":"unit_post_mi"
+                },
+                "yard":{
+                    "value":1, "name":"yard",       "isMetric":true, "ratio":1.0936133, "offset":0, "postfix":"unit_post_yard"
+                }
+            }
+        },
+        "mass": {
+            "base":"mass",
+            "units": {
+                "gram":{
+                    "value":1, "name":"gram",      "isMetric":false, "ratio":1,        "offset":0, "postfix":"unit_post_g"
+                },
+                "kilogram":{
+                    "value":1, "name":"kilogram",  "isMetric":false, "ratio":1000,     "offset":0, "postfix":"unit_post_kg"
+                },
+                "lb":{
+                    "value":1, "name":"pound",     "isMetric":true, "ratio":0.0022046, "offset":0, "postfix":"unit_post_lb"
+                },
+                "oz":{
+                    "value":1, "name":"ounce",     "isMetric":true, "ratio":0.035274,  "offset":0, "postfix":"unit_post_oz"
+                }
+            }
+        }
+    }
+}
+

@@ -3,7 +3,7 @@ export type Language = 'cn' | 'en';
 export interface Unit {
     value:number; // value = base.value * ratio + offset
     name:string;
-    isMetric:boolean;
+    isUS:boolean;
     ratio:number;
     offset:number;
     postfix:string;

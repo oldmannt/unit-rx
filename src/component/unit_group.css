@@ -1,0 +1,21 @@
+.group {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.group_left {
+    vertical-align:top;
+    display: table-cell;
+    width: 50%;
+}
+
+.group_right {
+    width: 50%;
+    vertical-align:top;
+    display: table-cell;
+}
+
+.divider {
+    margin:1px 0;
+}

@@ -388,6 +388,26 @@ module.exports = function(webpackEnv) {
                 sourceMaps: false,
               },
             },
+            {
+              test: /\.less$/,
+              //include: paths.appSrc,
+              use: [{
+                  loader: "style-loader" // creates style nodes from JS strings
+                 }, {
+                  loader: "css-loader" // translates CSS into CommonJS
+                 }, {
+                   loader: "less-loader",// compiles Less to CSS
+                   options: {
+                         sourceMap: true,
+                         modifyVars: {
+                               'primary-color': '#ff0000',
+                               'link-color': '#ff0000',
+                               'border-radius-base': '2px',
+                          },
+                         javascriptEnabled: true,
+                   }
+               }]
+            },
             // "postcss" loader applies autoprefixer to our CSS.
             // "css" loader resolves paths in CSS and adds assets as dependencies.
             // "style" loader turns CSS into JS modules that inject <style> tags.

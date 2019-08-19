@@ -20,6 +20,6 @@
     "isolatedModules": true
   },
   "include": [
-    "src", "config-overrides.js"
+    "src"
   ]
 }

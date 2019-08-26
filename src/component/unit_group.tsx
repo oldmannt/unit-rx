@@ -23,8 +23,8 @@ class UnitGroup extends React.Component<UnitGroupProps, any> {
     render() {
         const groups = this.props.groups;
         const group = groups[this.props.name]
-        console.log(`group render ${this.props.name}`)
-        console.log(this.props.groups[this.props.name])
+        //console.log(`group render ${this.props.name}`)
+        //console.log(this.props.groups[this.props.name])
         const unitsUS = Object.keys(group.units).filter(name => {return !group.units[name].isUS})
         const unitsMetrics = Object.keys(group.units).filter(name => {return group.units[name].isUS})
         // 合并 unitsUS unitsMetrics dummy fill

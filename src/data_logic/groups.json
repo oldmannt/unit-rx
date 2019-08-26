@@ -31,7 +31,7 @@
             }
         },
         "mass": {
-            "base":"mass",
+            "base":"gram",
             "units": {
                 "gram":{
                     "value":1, "name":"gram",      "isMetric":false, "ratio":1,        "offset":0, "postfix":"unit_post_g"

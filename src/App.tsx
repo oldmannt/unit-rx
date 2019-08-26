@@ -19,6 +19,7 @@ class App extends React.Component<AppProps, any> {
     const jsonGroup:any = jsonGroupData['groups'];
     if (jsonGroup !== null)
     {
+      console.log('componentWillMount load groups')
       console.log(jsonGroup);
       for (var key in jsonGroup) {
         if (jsonGroup.hasOwnProperty(key)) {

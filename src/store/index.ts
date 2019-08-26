@@ -11,6 +11,7 @@ export interface Unit {
 
 export interface UnitGroup {
     base:string;
+    select:string;
     summary:string;
     units: {
         [name:string]:Unit;

@@ -2,35 +2,65 @@ import React from 'react';
 import './unit.css'
 import { connect } from 'react-redux';
 import { Store } from '../store';
+import { actions } from '../actions';
 
 interface UnitProps {
     inputValue:Store['inputValue'];
     groups:Store['groups'];
+    setGroupSelect: (group: string, base: string) => void;
     groupName:string;
     unitName:string;
+
 }
 
 class Unit extends React.Component<UnitProps, any> {
-    // constructor(props:UnitProps) {
-    //     super(props);
-    //     //this.render = this.render.bind(this);
-    // }
-    
-    render() {
-        //let value = this.props.inputValue===undefined?0:this.props.inputValue;
-        //console.log(`unit value:${this.props.inputValue}`)
+    constructor(props:UnitProps) {
+        super(props);
+        this.onClicked = this.onClicked.bind(this);
+    }
+
+    onClicked(event:React.MouseEvent<HTMLParagraphElement, MouseEvent>) {
+        this.props.setGroupSelect(this.props.groupName, this.props.unitName)
+    }
+
+    getBaseValue():number {
+        return 0;
+    }
+
+    getValue():string {
         const group = this.props.groups[this.props.groupName];
         const unit = group.units[this.props.unitName]
         let value = this.props.inputValue;
-        const postfix = unit.postfix.substring("unit_post_".length)
-        if (unit.name !== group.base)
+        
+        if (unit.name === group.select)
         {
-            value = value * unit.ratio + unit.offset
+            return value.toString();
         }
+
+        let base = this.getBaseValue();
+        if (unit.name === group.base)
+        {
+            return base.toString();
+        }
+
+        value = base * unit.ratio + unit.offset
+        return value.toString();
+    }
+    
+    render() {
+        const group = this.props.groups[this.props.groupName];
+        const unit = group.units[this.props.unitName]
+        // let value = this.props.inputValue;
+        // const postfix = unit.postfix.substring("unit_post_".length)
+        // if (unit.name !== group.select )
+        // {
+        //     value = value * unit.ratio + unit.offset
+        // }
+        // console.log(`${this.props.groupName}.${this.props.unitName}:${value}`)
         return(
             <div className='unit'>
-                <p className='unit-value'>{value.toString()}</p>
-                <p className='unit-name'>{postfix}</p>
+                <p onClick={this.onClicked} className='unit-value'>{unit.value.toString()}</p>
+                <p onClick={this.onClicked} className='unit-name'>{unit.postfix}</p>
             </div>
         );
     }
@@ -44,7 +74,10 @@ class Unit extends React.Component<UnitProps, any> {
 
 const ConnectedUnit = connect (
     (state:Store) => ({...state}),
-    null
+    dispatch => ({
+        setGroupSelect: (group: string, base: string) => 
+        dispatch(actions.setGroupSelect(group, base))
+      })
 )(Unit)
   
 export {ConnectedUnit as Unit}

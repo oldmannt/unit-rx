@@ -1,6 +1,6 @@
 
 export const actions = {
   inputChange: (value: number) => ({ type: 'inputChange', value }),
-  setGroupBase: (group: string, base: string) => ({type: 'setGroupBase', group, base}),
+  setGroupSelect: (group: string, select: string) => ({type: 'setGroupSelect', group, select}),
   setGroup: (name: string, group: Object) => ({type: 'setGroup', name, group})
 };

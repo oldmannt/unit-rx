@@ -7,11 +7,12 @@ import { connect } from 'react-redux';
 import { actions } from './actions';
 import { Store } from './store';
 import jsonGroupData from'./data_logic/groups.json';
+import { UnitGroupState } from './store/index';
 const axios = require('axios');
 
 interface AppProps {
   groups: Store['groups'];
-  setGroup: (name: string, group: Object) => void;
+  setGroup: (name: string, group: UnitGroupState) => void;
 }
 
 class App extends React.Component<AppProps, any> {
@@ -63,7 +64,7 @@ class App extends React.Component<AppProps, any> {
 const ConnectedApp = connect(
   (state:Store) => ({groups: state.groups}),
   dispatch => ({
-    setGroup: (name: string, group: Object) => dispatch(actions.setGroup(name, group))
+    setGroup: (name: string, group: UnitGroupState) => dispatch(actions.setGroup(name, group))
   })
 )(App);
 

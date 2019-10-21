@@ -9,7 +9,7 @@ export interface Unit {
     postfix:string;
 }
 
-export interface UnitGroup {
+export interface UnitGroupState {
     base:string;
     select:string;
     summary:string;
@@ -21,7 +21,7 @@ export interface UnitGroup {
 export interface Store {
     inputValue:number;
     groups: {
-        [name:string]:UnitGroup;
+        [name:string]:UnitGroupState;
     };
 
     // languageKeys: {

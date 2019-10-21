@@ -1,27 +1,30 @@
-import { Store, UnitGroup } from '../store';
+import { Store, UnitGroupState } from '../store';
 import { combineReducers } from 'redux';
 import { createReducer } from 'redux-starter-kit';
 import {StoreUpdater} from '../data_logic/store_updater'
 
+export const initStore:Store = {
+  inputValue:1,
+  groups:{}
+}
 export const stateReducer = createReducer<Store>(
-  {inputValue:1, groups:{}},
+  initStore,
   {
-    inputChange(store: Store, action:{value:number}):Store {
-      return StoreUpdater.inputChange(store, action.value);
+    inputChange(store: Store, action:{value:number}) {
+      StoreUpdater.inputChange(store, action.value);
     },
 
-    setGroupSelect(store: Store, action: { group: string; select: string; }) :Store{
+    setGroupSelect(store: Store, action: { group: string; select: string; }) {
       //groups[action.group].select = action.select;
       console.log(`setGroupSelect group:${action.group} select:${action.select}`)
-      return StoreUpdater.setGroupSelect(store, action.group, action.select);
+      StoreUpdater.setGroupSelect(store, action.group, action.select);
     },
 
-    setGroup(store: Store, action: { name: string; group: UnitGroup; }) :Store {
+    setGroup(store: Store, action: { name: string; group: UnitGroupState; }) {
       console.log(`groupsReducer add group name:${action.name}`)
       console.log(store)
       console.log(action.group)
-      //groups[action.name] = action.group;
-      return StoreUpdater.setGroup(store, action.name, action.group);
+      StoreUpdater.setGroup(store, action.name, action.group);
     }
   }
 );

@@ -22,30 +22,6 @@ class Unit extends React.Component<UnitProps, any> {
     onClicked(event:React.MouseEvent<HTMLParagraphElement, MouseEvent>) {
         this.props.setGroupSelect(this.props.groupName, this.props.unitName)
     }
-
-    getBaseValue():number {
-        return 0;
-    }
-
-    getValue():string {
-        const group = this.props.groups[this.props.groupName];
-        const unit = group.units[this.props.unitName]
-        let value = this.props.inputValue;
-        
-        if (unit.name === group.select)
-        {
-            return value.toString();
-        }
-
-        let base = this.getBaseValue();
-        if (unit.name === group.base)
-        {
-            return base.toString();
-        }
-
-        value = base * unit.ratio + unit.offset
-        return value.toString();
-    }
     
     render() {
         const group = this.props.groups[this.props.groupName];
